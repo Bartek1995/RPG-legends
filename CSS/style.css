@@ -1,6 +1,4 @@
-body {
-    
-}
+
 
 .game-window {
     position: absolute;
@@ -14,6 +12,8 @@ body {
     box-shadow: 0px 0px 7px black;
 }
 
+
+/* ----------------------------STARTING SCREEN STYLING ----------------------------*/
 .starting-screen{
     width: 100%;
     height: 100%;
@@ -65,4 +65,82 @@ body {
     color: white;
     text-align: center;
     transform: translate(-50%, -50%);
+}
+
+.hello-player {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+
+    font-size: 25px;
+    color: white;
+    font-family: 'Architects Daughter', cursive;
+    transform: translate(-50%, -50%);
+}
+
+.class_choice_div{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.class{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px black;
+    margin: 20px;
+    
+    cursor: pointer;
+}
+
+.class i {
+    position: absolute;
+    top: 50%;
+    color: rgb(0, 0, 0);
+    transform: translate(-50%, -50%);
+}
+
+.class:hover {
+    box-shadow: -2px 0px 20px gold;
+}
+
+.warrior {
+    background-color: goldenrod;
+}
+
+.warrior i {
+    left: 70px;
+}
+
+.archer {
+    background-color: red;
+}
+
+.archer i {
+    left: 210px;
+}
+
+.mage{
+    background-color: rgb(51, 32, 218);
+}
+
+.mage i{
+    left: 350px;
+}
+
+
+
+/* ----------------------------GAME MENU STYLING ----------------------------*/
+
+
+.game-menu{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    display: none;
 }
