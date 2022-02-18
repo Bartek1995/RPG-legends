@@ -105,12 +105,12 @@
     transform: translate(-50%, -50%);
 }
 
-.class:hover {
-    box-shadow: -2px 0px 20px gold;
-}
-
 .warrior {
     background-color: goldenrod;
+}
+
+.warrior:hover{
+    box-shadow: -2px 0px 20px goldenrod;
 }
 
 .warrior i {
@@ -121,12 +121,20 @@
     background-color: red;
 }
 
+.archer:hover{
+    box-shadow: -2px 0px 20px red;
+}
+
 .archer i {
     left: 210px;
 }
 
 .mage{
     background-color: rgb(51, 32, 218);
+}
+
+.mage:hover{
+    box-shadow: -2px 0px 20px rgb(51, 32, 218);
 }
 
 .mage i{
@@ -139,8 +147,295 @@
 
 
 .game-menu{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-image: url('../IMG/game-menu-castle.jpg');
+    background-size: cover;
+}
+
+
+.character-stats {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 350px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.589);
+    z-index: 10;
+
+    border-radius: 25px;
+    display: none;
+}
+
+.player-nick-and-level {
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+}
+
+.health-bar{
+    margin: 0 auto;
+    height: 25px;
+    width: 80%;
+
+    border: 2px solid rgba(3, 3, 3, 0.432);
+}
+
+.experience-bar{
+    margin: 20px auto;
+    height: 25px;
+    width: 80%;
+
+    border: 2px solid rgba(3, 3, 3, 0.432);
+}
+
+.current-health-player {
     width: 100%;
     height: 100%;
     background-color: red;
+    transition: width 1s;
+}
+.current-health-enemy {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transition: width 1s;
+}
+
+.current-experience {
+    width: 0%;
+    height: 100%;
+    background-color: gold;
+    transition: width 1s;
+}
+
+.stat-information{
+    margin-left: 90px;
+    line-height: 20px;
+    color: white;
+    font-size: 11px;
+    white-space: nowrap;
+    
+}
+
+.game-info {
+    position: absolute;
+    top: 250px;
+    left: 60px;
+    width: 350px;
+    color: white;
+}
+
+.character-information {
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    height: 40px;
+    width: 150px;
+
+}
+
+.button {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.719);
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    transition: height 0.3s, width 0.3s, top 0.3s;
+}
+
+.character-information:hover {
+    height: 300px;
+    width: 400px;
+}
+
+.character-information:hover ~ .smith {
+    top: 370px;
+}
+
+.button-top-text{
+    margin-top: 7px;
+}
+
+
+.character-information span {
+    font-weight: bold;
+}
+
+
+/* ----------------------------SMITH DIV STYLING ----------------------------*/
+
+.smith  {
+    position: absolute;
+    top: 170px;
+    left: 500px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+}
+.smith:hover{
+    height: 350px;
+    width: 430px;
+}
+
+.smith button {
+    margin: 20px;
+}
+
+.gold {
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+
+
+/* ----------------------------FIGHT DIV STYLING ----------------------------*/
+
+.fight {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    height: 110px;
+    width: 320px;
+}
+
+.fight:hover{
+    height: 400px;
+    width: 600px;
+}
+
+.fight .text {
+    position: absolute;
+    right: 60px;
+    bottom: 0;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 50px;
+}
+
+.fight-information {
+    position: absolute;
+    bottom: 210px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+
+    transform: translateX(-50%);
+}
+
+.fight-enemy-level {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    transform: translateX(-50%);
+}
+
+.fight-enemy-level button {
+    margin: 10px;
+}
+
+
+/* ----------------------------FIGHT SCREEN STYLING ----------------------------*/
+
+.game-fight {
+    position: absolute;
     display: none;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../IMG/dark-forest.jpg');
+    background-size: cover;
+    z-index: 10;
+}
+
+.fight-text p {
+    margin: 40px;
+    font-size: 40px;
+    font-family: 'Amatic SC', cursive;
+    color:  white;
+    letter-spacing: 1px;
+}
+.health-bar-fight {
+    position: absolute;
+    height: 30px;
+    width: 80%;
+    left: 50%;
+    border: 1px solid black;
+    transform: translate(-50%, -50%);
+}
+.player {
+    top: 240px;
+}
+
+.enemy {
+    top: 650px;
+}
+.player-or-enemy-information{
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.fight-functions {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fight-log{
+    position: absolute;
+    top: 475px;
+    left: 50%;
+    height: 300px;
+    width: 70%;
+    padding-top: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.418);
+    text-align: center;
+    overflow: auto;
+    transform: translate(-50%, -50%);
+}
+
+.player-or-enemy-information{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.game-over{
+    position: absolute;
+    display: none;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.767);
+    z-index: 10;
+}
+
+.game-over button {
+    font-size: 40px;
+}
+.game-over-inside{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 170px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+
 }
